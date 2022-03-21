@@ -9,3 +9,6 @@
 
 
 更新随缘
+
+[LSPosed仓库链接](https://github.com/Xposed-Modules-Repo/com.coolest.toolbox])
+
