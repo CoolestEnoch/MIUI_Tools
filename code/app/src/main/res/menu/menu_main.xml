@@ -1,0 +1,31 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.cool.miui_toolbox.ScrollingActivity">
+
+    <item
+        android:id="@+id/release_notes"
+        app:showAsAction="always"
+        android:icon="@mipmap/notepaad_win11"
+        android:title="更新日志" />
+
+    <item
+        android:id="@+id/author_button"
+        android:icon="@mipmap/sunglass_huaji"
+        android:title="关于"
+        app:showAsAction="always" />
+
+
+    <item
+        android:id="@+id/clear_log"
+        android:orderInCategory="100"
+        android:title="清空日志区"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/enable_root_button"
+        android:orderInCategory="100"
+        android:title="启用所有需要root的按钮"
+        app:showAsAction="never" />
+
+</menu>

@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fitsSystemWindows="true"
+	android:orientation="vertical"
+	android:resizeableActivity="true"
+	tools:context=".ui.MainActivity">
+
+	<com.google.android.material.card.MaterialCardView
+		style="@style/DefaultCard"
+		app:cardBackgroundColor="@color/card_bg">
+
+		<LinearLayout
+			android:id="@+id/mainCardLayout"
+			style="@style/Default"
+			android:orientation="horizontal">
+
+			<ImageView
+				style="@style/DefaultImage"
+				android:src="@mipmap/jinfan" />
+
+			<LinearLayout
+				style="@style/Default"
+				android:orientation="vertical"
+				android:paddingVertical="25dp">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="MIUI工具箱"
+					android:textColor="@color/white"
+					android:textSize="24dp"
+					android:textStyle="bold" />
+
+				<TextView
+					android:id="@+id/tvRootStatus"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="2dp"
+					android:text="Root未获取"
+					android:textColor="@color/white"
+					android:textSize="15dp"
+					android:textStyle="italic" />
+
+				<TextView
+					android:id="@+id/tvXposedStatus"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="2dp"
+					android:text="Xposed未激活"
+					android:textAppearance="?attr/textAppearanceBody2"
+					android:textColor="@color/white"
+					android:textSize="17dp" />
+			</LinearLayout>
+		</LinearLayout>
+	</com.google.android.material.card.MaterialCardView>
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+
+			<!--	MIUI部分-->
+			<LinearLayout
+				android:id="@+id/miuiSettingsCard"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="12dp"
+				android:layout_marginTop="10dp"
+				android:layout_marginEnd="12dp"
+				android:layout_marginBottom="10dp"
+				android:background="@drawable/bg_stroke_corner_grey"
+				android:orientation="vertical"
+				android:paddingStart="7dp"
+				android:paddingEnd="7dp"
+				android:paddingBottom="7dp">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="7dp"
+					android:orientation="horizontal">
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_alignParentLeft="true"
+						android:layout_centerVertical="true"
+						android:layout_marginStart="12dp"
+						android:drawablePadding="7dp"
+						android:gravity="center"
+						android:text="MIUI部分"
+						android:textColor="@color/icon_bg"
+						android:textSize="12dp"
+						app:drawableLeftCompat="@drawable/ic_baseline_sports_kabaddi_24" />
+
+					<TextView
+						android:id="@+id/miuiSettingsFold"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_marginEnd="12dp"
+						android:clickable="true"
+						android:drawablePadding="7dp"
+						android:focusable="true"
+						android:foreground="?attr/selectableItemBackgroundBorderless"
+						android:gravity="center"
+						android:text="收起"
+						android:textColor="@color/icon_bg"
+						android:textSize="12dp"
+						android:textStyle="bold"
+						app:drawableLeftCompat="@drawable/ic_baseline_keyboard_arrow_up_24" />
+
+				</RelativeLayout>
+
+				<LinearLayout
+					android:id="@+id/miuiSettingsView"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical">
+
+					<!--        通知设置-->
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="5dp"
+						android:orientation="horizontal">
+
+						<TextView
+							android:id="@+id/notification_integrate_b"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:clickable="true"
+							android:drawableTop="@drawable/ic_baseline_dynamic_form_24_notify_merge"
+							android:focusable="true"
+							android:foreground="?attr/selectableItemBackgroundBorderless"
+							android:gravity="center_horizontal"
+							android:onClick="notification_integrate"
+							android:text="通知聚合"
+							android:textSize="18sp" />
+
+						<TextView
+							android:id="@+id/notification_filter_b"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:clickable="true"
+							android:drawableTop="@drawable/ic_baseline_dynamic_feed_24_notify_filter"
+							android:focusable="true"
+							android:foreground="?attr/selectableItemBackgroundBorderless"
+							android:gravity="center_horizontal"
+							android:onClick="notification_filter"
+							android:text="通知过滤"
+							android:textSize="18sp" />
+
+						<TextView
+							android:id="@+id/gotoMiuiPlusSettings"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:clickable="true"
+							android:drawableTop="@drawable/ic_baseline_polymer_24"
+							android:focusable="true"
+							android:foreground="?attr/selectableItemBackgroundBorderless"
+							android:gravity="center_horizontal"
+							android:text="MIUI+设置"
+							android:textSize="18sp" />
+
+						<TextView
+							android:id="@+id/gotoMiuiScanQRCode"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:clickable="true"
+							android:drawableTop="@drawable/ic_baseline_qr_code_scanner_24"
+							android:focusable="true"
+							android:foreground="?attr/selectableItemBackgroundBorderless"
+							android:gravity="center_horizontal"
+							android:text="扫一扫"
+							android:textSize="18sp" />
+
+					</LinearLayout>
+
+					<!--        MIUI+设置-->
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="5dp"
+						android:orientation="horizontal">
+
+						<LinearLayout
+							android:id="@+id/soundSettingLayout"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_vertical"
+							android:layout_weight="1"
+							android:orientation="vertical">
+
+							<TextView
+								android:id="@+id/btnHarmanKardon"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:clickable="true"
+								android:drawableTop="@drawable/ic_baseline_music_note_24"
+								android:focusable="true"
+								android:foreground="?attr/selectableItemBackgroundBorderless"
+								android:gravity="center_horizontal"
+								android:onClick="btnHarmanKardon"
+								android:text="root添加哈曼卡顿开关"
+								android:textSize="18sp" />
+
+							<Switch
+								android:id="@+id/switch_harmanKardon"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:text="哈曼卡顿音效"
+								android:textAllCaps="false"
+								android:textOff="关"
+								android:textOn="开"
+								tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+							<Switch
+								android:id="@+id/switch_dolby"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:text="杜比全景声"
+								android:textAllCaps="false"
+								android:textOff="关"
+								android:textOn="开"
+								tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+							<Switch
+								android:id="@+id/swLock100"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:text="手机管家体检锁100分"
+								android:textAllCaps="false"
+								android:textOff="关"
+								android:textOn="开"
+								tools:ignore="UseSwitchCompatOrMaterialXml" />
+						</LinearLayout>
+
+						<LinearLayout
+							android:id="@+id/miuiPlusSettingGroup"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:orientation="vertical">
+
+							<Switch
+								android:id="@+id/switch_miui_plus_connect_computer"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_gravity="center_horizontal"
+								android:text="MIUI+可连接电脑"
+								android:textAllCaps="false"
+								android:textOff="关"
+								android:textOn="开"
+								tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+							<Switch
+								android:id="@+id/swMiuiPlusPcInfo"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_gravity="center_horizontal"
+								android:text="自定义电脑信息"
+								android:textOff="关"
+								android:textOn="开"
+								tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+							<com.google.android.material.textfield.TextInputLayout
+								style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content">
+
+								<com.google.android.material.textfield.TextInputEditText
+									android:id="@+id/etMiuiPlusPcName"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:hint="电脑名(实时生效)" />
+
+							</com.google.android.material.textfield.TextInputLayout>
+
+							<com.google.android.material.textfield.TextInputLayout
+								style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:layout_marginTop="7dp">
+
+								<com.google.android.material.textfield.TextInputEditText
+									android:id="@+id/etMiuiPlusPcTail"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:hint="电脑小尾巴(重启MIUI+生效)"
+									android:singleLine="true" />
+
+							</com.google.android.material.textfield.TextInputLayout>
+						</LinearLayout>
+
+					</LinearLayout>
+
+
+
+				</LinearLayout>
+
+			</LinearLayout>
+
+
+			<!--	Magisk与Root相关-->
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="12dp"
+				android:layout_marginTop="10dp"
+				android:layout_marginEnd="12dp"
+				android:layout_marginBottom="10dp"
+				android:background="@drawable/bg_stroke_corner_grey"
+				android:orientation="vertical"
+				android:paddingStart="7dp"
+				android:paddingEnd="7dp"
+				android:paddingBottom="7dp">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="7dp"
+					android:orientation="horizontal">
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_alignParentLeft="true"
+						android:layout_centerVertical="true"
+						android:layout_marginStart="12dp"
+						android:drawablePadding="7dp"
+						android:gravity="center"
+						android:text="Magisk与Root相关"
+						android:textColor="@color/icon_bg"
+						android:textSize="12dp"
+						app:drawableLeftCompat="@drawable/magisk" />
+
+					<TextView
+						android:id="@+id/magiskRootSettingsFold"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_marginEnd="12dp"
+						android:clickable="true"
+						android:drawablePadding="7dp"
+						android:focusable="true"
+						android:foreground="?attr/selectableItemBackgroundBorderless"
+						android:gravity="center"
+						android:text="收起"
+						android:textColor="@color/icon_bg"
+						android:textSize="12dp"
+						android:textStyle="bold"
+						app:drawableLeftCompat="@drawable/ic_baseline_keyboard_arrow_up_24" />
+
+				</RelativeLayout>
+
+				<LinearLayout
+					android:id="@+id/magiskRootSettings"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical">
+
+					<!--        通知设置-->
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="5dp"
+						android:orientation="horizontal">
+
+						<TextView
+							android:id="@+id/selinux_enforce_b"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:clickable="true"
+							android:drawableTop="@drawable/ic_baseline_verified_user_24"
+							android:focusable="true"
+							android:foreground="?attr/selectableItemBackgroundBorderless"
+							android:gravity="center_horizontal"
+							android:onClick="setEnforce"
+							android:text="Selinux Enforce"
+							android:textSize="18sp" />
+
+						<TextView
+							android:id="@+id/getEnforce_b"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:clickable="true"
+							android:drawableTop="@drawable/ic_baseline_policy_24"
+							android:focusable="true"
+							android:foreground="?attr/selectableItemBackgroundBorderless"
+							android:gravity="center_horizontal"
+							android:onClick="getEnforce"
+							android:text="Selinux状态"
+							android:textSize="18sp" />
+
+						<TextView
+							android:id="@+id/selinux_permissive_b"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:clickable="true"
+							android:drawableTop="@drawable/ic_baseline_privacy_tip_24"
+							android:focusable="true"
+							android:foreground="?attr/selectableItemBackgroundBorderless"
+							android:gravity="center_horizontal"
+							android:onClick="setPermissive"
+							android:text="Selinux Permissive"
+							android:textSize="18sp" />
+
+					</LinearLayout>
+
+					<!--        MIUI+设置-->
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="5dp"
+						android:orientation="horizontal">
+
+						<LinearLayout
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_weight="1"
+								android:clickable="true"
+								android:drawableTop="@drawable/ic_baseline_nat_24"
+								android:focusable="true"
+								android:foreground="?attr/selectableItemBackgroundBorderless"
+								android:gravity="center_horizontal"
+								android:onClick="hideMomo"
+								android:text="强力隐藏momo"
+								android:textSize="18sp" />
+
+							<TextView
+								android:id="@+id/active_icebox_b"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_weight="1"
+								android:clickable="true"
+								android:drawableTop="@drawable/ic_baseline_ac_unit_24"
+								android:focusable="true"
+								android:foreground="?attr/selectableItemBackgroundBorderless"
+								android:gravity="center_horizontal"
+								android:onClick="activeIceBox"
+								android:text="激活冰箱"
+								android:textSize="18sp" />
+
+						</LinearLayout>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+			</LinearLayout>
+
+			<!--	日志-->
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginHorizontal="12dp"
+				android:orientation="vertical">
+
+				<TextView
+					android:id="@+id/hide_momo_b"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="消息"
+					android:textColor="@color/black_text"
+					android:textSize="40dp"
+					android:textStyle="bold" />
+
+				<TextView
+					android:id="@+id/logs_t"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textColor="@color/black_text" />
+
+			</LinearLayout>
+		</LinearLayout>
+
+	</ScrollView>
+</LinearLayout>

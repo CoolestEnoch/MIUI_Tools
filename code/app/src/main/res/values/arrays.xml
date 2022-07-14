@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="xposed_scope">
+<!--		<item>com.android.contacts</item>-->
+<!--		<item>com.android.server.telecom</item>-->
+		<item>com.xiaomi.mirror</item>
+		<item>com.android.settings</item>
+		<item>com.miui.misound</item>
+		<item>android</item>
+<!--		<item>com.xiaomi.mi_connect_service</item>-->
+<!--		在这里添加LSP内默认勾选的app包名, 复制上一行就行-->
+	</string-array>
+</resources>

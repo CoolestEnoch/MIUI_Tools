@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+	<style name="Theme.MIUI工具箱" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+		<!-- Primary brand color. -->
+		<item name="colorPrimary">@color/material_dynamic_primary50</item>
+		<item name="colorPrimaryVariant">@color/material_dynamic_primary70</item>
+		<item name="colorOnPrimary">@color/material_dynamic_primary95</item>
+		<!-- Secondary brand color. -->
+		<item name="colorSecondary">@color/material_dynamic_secondary50</item>
+		<item name="colorSecondaryVariant">@color/material_dynamic_secondary70</item>
+		<item name="colorOnSecondary">@color/material_dynamic_secondary0</item>
+		<!-- Status bar color. -->
+		<item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+		<!-- Customize your theme here. -->
+	</style>
+</resources>

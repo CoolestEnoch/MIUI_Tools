@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	tools:context="com.coolest.toolbox.ui.AboutActivity">
+
+	<item
+		android:id="@+id/update_channel"
+		app:showAsAction="always"
+		android:icon="@drawable/ic_baseline_alt_route_24"
+		android:title="更新渠道" />
+	<item
+		android:id="@+id/release_history"
+		app:showAsAction="always"
+		android:icon="@mipmap/notepaad_win11"
+		android:title="历史版本" />
+	<item
+		android:id="@+id/action_update"
+		android:icon="@drawable/ic_baseline_refresh_24"
+		android:title="检查更新"
+		app:showAsAction="always" />
+</menu>

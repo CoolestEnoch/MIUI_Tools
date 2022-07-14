@@ -1,0 +1,41 @@
+{
+  "easyGoVersion": "1.0",
+  "client": "com.coolest.toolbox",
+  "logicEntities": [
+    {
+      "head": {
+        "function": "magicwindow",
+        "required": "true"
+      },
+      "body": {
+        "mode": "1",
+        "defaultDualActivities": {
+          "mainPages": "net.micode.notes.ui.NotesListActivity",
+          "relatedPage": ""
+        },
+        "Activities": [
+          {
+            "name": "net.micode.notes.ui.NoteEditActivity",
+            "defaultFullScreen": "false"
+          }
+        ],
+        "activityPairs": [
+          {
+            "from": "net.micode.notes.ui.NotesListActivity",
+            "to": "*"
+          }
+        ],
+        "UX": {
+          "windowsRatio": [
+            {
+              "device": "PAD",
+              "ratio": "900|1654"
+            }
+          ],
+          "supportRotationUxCompat": "true",
+          "isDraggable": "true"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+	android:layout_gravity="center"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content">
+
+
+	<com.google.android.material.card.MaterialCardView
+		style="@style/DefaultCard"
+		app:cardBackgroundColor="@color/purple_500">
+
+		<LinearLayout
+			style="@style/Default"
+			android:orientation="horizontal">
+
+			<ImageView
+				style="@style/DefaultImage"
+				android:src="@drawable/ic_baseline_follow_the_signs_24" />
+
+			<LinearLayout
+				style="@style/Default"
+				android:orientation="vertical"
+				android:paddingVertical="25dp">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="还没写好"
+					android:textColor="@color/white"
+					android:textSize="18dp"
+					android:textStyle="bold" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="2dp"
+					android:text="去别处逛逛吧"
+					android:textColor="@color/white"
+					android:textSize="15dp"
+					android:textStyle="italic" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="2dp"
+					android:text="或许还有些好玩的"
+					android:textAppearance="?attr/textAppearanceBody2"
+					android:textColor="@color/white"
+					android:textSize="17dp" />
+
+			</LinearLayout>
+
+		</LinearLayout>
+
+	</com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>
